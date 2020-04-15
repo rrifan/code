@@ -1,11 +1,14 @@
+import React from 'react';
+import './App.css';
 import {
   BrowserRouter,
   Switch,
+  Route,
 } 
 from "react-router-dom";
-import Header from "./Header";
 import Blog from "./Blog";
-
+import Header from "./Header";
+import BlogDetail from "./BlogDetail";
 //install bootstrap dulu
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -21,7 +24,7 @@ function App() {
             About
           </Route>
           <Route path="/blog/:articleId" component={BlogDetail} />
-          <Route path="/blog">
+          <Route path="/blog" component={Blog}>
             <Blog />
           </Route>
           <Route path="/">
@@ -32,4 +35,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
+export default App;
